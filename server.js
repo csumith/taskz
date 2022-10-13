@@ -1,9 +1,10 @@
-require('dotenv').config
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const assert = require('assert')
 const taskRoute = require('./route/taskRoute')
+const connectDB = require('./db/connect')
 
 
 const port = process.env.PORT || Number(5000)
@@ -32,6 +33,6 @@ app.all('*',(req,res)=>{
 
 // server listen
 app.listen(port, () => {  // starting the server
-   
+    connectDB()
     console.log(`server is running @ http://localhost:${port}`)
 }) 

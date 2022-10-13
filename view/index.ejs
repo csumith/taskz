@@ -38,6 +38,48 @@
                 <h3 class="display-3 text-secondary">Tasks List</h3>
             </div>
         </div>
+        <div class="row">
+            <% tasks.forEach((item,index)=>{ %> <!-- //spearating ejx code by html -->
+                <div class="col-md-4 mt-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-center"><%= item.title %></h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <details>
+                                        <summary>Content</summary>
+                                        <p class="text-justify"> <%=item.content %></p>
+                                    </details>
+
+                                </li>
+
+                                <li class="list-group-item">
+                                    <strong class="text-success">Start Date</strong>
+                                    <span class="float-end badge bg-success"><%=item.start %></span>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <strong class="text-success">End Date</strong>
+                                    <span class="float-end badge bg-danger"><%=item.end %></span>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <strong class="text-success">Created By</strong>
+                                    <span class="float-end badge bg-danger"><%=item.user %></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="class-footer">
+                            <a href="/update/<%= item._id %>" class="btn btn-sm btn-outline-info">Edit </a>
+                            <a href="/delete/<%= item._id %>" class="btn btn-sm btn-outline-danger float-end">Delete</a>
+
+                        </div>
+                    </div>
+                </div>
+                <%})%> 
+        </div>
         
     </div>
     
