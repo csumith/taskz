@@ -8,5 +8,9 @@ route.get('/edit/:id', taskController.edit)
 
 //query reference =>/:id ie params
 route.post(`/newTask`, taskController.createTask)
+route.post('/updateTask/:id', taskController.updateTask)
+
+
+route.get('/delete/:id', taskController.deleteTask)
 
 module.exports = route
